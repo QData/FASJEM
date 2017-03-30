@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "norm_vec <- function(x) sqrt(sum(x^2))\n\nf1 <- function(x, ga){\n  result = sign(x) * pmax(abs(x)-ga, 0)\n  return(result)\n}\n\ng1 <- function(x, a, lambda){\n  result = pmax(pmin(x - a, -lambda), lambda) + a\n  return(result)\n}\n\nf2 <- function(x, ga){\n  result = x * array(pmax(1 - ga / apply(x, c(1,2), norm_vec), 0), dim(x))\n  return(result)\n}\n\ng2 <- function(x, a, lambda){\n  result = array(pmax(lambda / apply(x - a, c(1,2), norm_vec), 1), dim(x)) * (x - a) + a\n  return(result)\n}\n\nfasjem_g <- function(a, lambda, epsilon, gamma, rho, iterMax){\n  x  = f1(a, (4*lambda*gamma))\n  x1 = x\n  x2 = x\n  x3 = x\n  x4 = x\n  for (i in 1:iterMax){\n    p1 = f1(x1, (4*lambda*gamma))\n    p2 = g1(x2, a, (4*lambda*gamma*epsilon))\n    p3 = f2(x3, lambda)\n    p4 = g2(x4, a, (epsilon*lambda))\n    p  = (p1 + p2 + p3 + p4) / 4\n    x1 = x1 + (p * 2 - p1 - x1) * rho\n    x2 = x2 + (p * 2 - p2 - x2) * rho\n    x3 = x3 + (p * 2 - p3 - x3) * rho\n    x4 = x4 + (p * 2 - p4 - x4) * rho\n    x  = x  + (p - x) * rho\n  }\n  x = f1(x, (4*lambda*gamma))\n  return(x)\n}\n\nEEGM <- function(covMatrix, lambda){\n  result = sign(covMatrix) * pmax(abs(covMatrix)-lambda, 0)\n  result\n}\n\nbackwardMap <-function(covMatrix){\n  niuList = 0.001 * (1:1000)\n  bestDet = det(EEGM(covMatrix, 0.001))\n  bestniu = 0.001\n  for (i in 1:1000){\n    if (bestDet < det(EEGM(covMatrix, niuList[i]))){\n      bestDet = det(EEGM(covMatrix, niuList[i]))\n      bestniu = niuList[i]\n    }\n  }\n  return(solve(EEGM(covMatrix, bestniu)))\n}\n\nfasjem <- function(X, lambda, epsilon, gamma, rho, iterMax){\n  tmp = array(0, dim = c(dim(X[[1]])[1], dim(X[[1]])[2], length(X)))\n  for (i in 1:length(X)){\n    tmp[,,i] = X[[i]]\n  }\n  if (!isSymmetric(X[[1]])){\n    tmp = array(apply(tmp, 3, cov), dim=c(ncol(X[[i]]), ncol(X[[i]]), length(X)))\n  }\n\n  tmp = array(apply(tmp, 3, backwardMap), dim = c(ncol(X[[i]]), ncol(X[[i]]), length(X)))\n  tmp = fasjem_g(tmp, lambda, epsilon, gamma, rho, iterMax)\n  result = list()\n  for (i in 1:dim(tmp)[3]){\n    result[[i]] = tmp[, , i]\n  }\n  return(result)\n}\n\n",
+    "created" : 1490908867982.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4037599054",
+    "id" : "FCFF9DD0",
+    "lastKnownWriteTime" : 1490911560,
+    "last_content_update" : 1490911560787,
+    "path" : "C:/Users/mydesktop/Dropbox/SVN/nonparaGM/codes/fasjem-cran/fasjem/R/fasjem.R",
+    "project_path" : "R/fasjem.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

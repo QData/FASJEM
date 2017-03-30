@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#simulate multiple sparse graphs\nsimulateGraph <- function(p = 100, N = 2, seedNum = 37,s = 1){\n    library(MASS)\n#set parameters\n# p = 1000\n# N = 3\n    set.seed(seedNum)\n    graphs <- list()\n    I = diag(1,p,p)\n    graph_shared = matrix(1,p,p)\n    for(j in 1:p){\n        for(k in j:p){\n            graph_shared[j,k] = 0.5 * rbinom(1,1, 0.1* s)\n            graph_shared[k,j] = graph_shared[j,k]\n        }\n    }\n    #generate the simulate graph\n    #first one is the all off diag element has 0.1*N to be 0.5 and others to be 0\n    for(i in 1:N){\n        graphs[[i]] <- matrix(1,p,p)\n    }\n    for(i in 1:N){\n        for(j in 1:p){\n            for(k in j:p){\n                graphs[[i]][j,k] = 0.5 * rbinom(1,1, 0.01* N)\n                graphs[[i]][k,j] = graphs[[i]][j,k]\n            }\n        }\n        graphs[[i]] = graphs[[i]] + graph_shared\n    }\n    \n    for(i in 1:N){\n        for(j in 1:p){\n            graphs[[i]][j,j] = 1\n        }\n    }\n    \n    for(i in 1:N){\n        graphs[[i]] = (graphs[[i]] - I) + (abs(min(eigen(graphs[[i]] - I)$value))+1) * I\n    }\n    graphs[[N + 1]] = graph_shared\n    graphs\n}",
+    "created" : 1490731597305.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3381850766",
+    "id" : "C3749F34",
+    "lastKnownWriteTime" : 1470974864,
+    "last_content_update" : 1470974864,
+    "path" : "~/Dropbox/SVN/nonparaGM/codes/countSketchingGM/simulateGraph.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

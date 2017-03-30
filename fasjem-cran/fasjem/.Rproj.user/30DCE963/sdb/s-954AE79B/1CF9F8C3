@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "setwd(\"~/Dropbox/SVN/nonparaGM/\")\naucMatrix = matrix(0,2,5)\ntMatrix = matrix(0,2,5)\nfor (j in 1:5){\np = 100 * j\nN = 2\nn = p / 2\nseedNum = 37\nlibrary(glasso)\nsource(\"./codes/TGM-v1/simulateGraphNew.R\")\nsource(\"./codes/EEGM-v1/EEGM.R\")\nsource(\"./codes/EEGM-v1/experiment_auc.R\")\nsource(\"./codes/TGM-v1/AUC.R\")\n# path = paste(args[1],\"codes/TGM-v1/\", sep = \"\")\n# source(paste(path,\"simulateGraph.R\", sep = \"\"))\n#initialize the graphs\ngraphs = list()\nGraphs = list()\nI = diag(1,p,p)\n\n\ngraphs = simulateGraphNew(p,N,seedNum)\nCovs = solve(graphs[[1]], I)\nX = mvrnorm(n,mu = rep(0,p),Covs)\ncovMatrix = cov(X)\nniuList = 0.001 * (1:1000)\nbestDet = det(EEGM(covMatrix, 0.001))\nbestniu = 0.001\nfor (i in 1:1000){\n   if (bestDet < det(EEGM(covMatrix, niuList[i]))){\n     bestDet = det(EEGM(covMatrix, niuList[i]))\n     bestniu = niuList[i]\n   }\n}\n\n\nbackwardMap = solve(EEGM(covMatrix, bestniu))\ntStart = proc.time()[[3]]\naucGlasso = experiment_auc(covMatrix, \"glasso\", graphs[[1]])$auc\ntEnd   = proc.time()[[3]]\ntGlasso = tEnd - tStart\ntStart = proc.time()[[3]]\naucEE = experiment_auc(backwardMap, \"EE\", graphs[[1]])$auc\ntEnd  = proc.time()[[3]]\ntEE = tEnd - tStart\n\naucMatrix[1,j] = aucEE\naucMatrix[2,j] = aucGlasso\ntMatrix[1,j]   = tEE\ntMatrix[2,j]   = tGlasso\n\n}\n\ntPM = matrix(1,2,31)\nfPM = matrix(1,2,31)\nresultGlasso = experiment_auc(covMatrix, \"glasso\", graphs[[1]])\nresultEE = experiment_auc(backwardMap, \"EE\", graphs[[1]])\ntPM[1, ] = resultEE$tPM\ntPM[2, ] = resultGlasso$tPM\nfPM[1, ] = resultEE$fPM\nfPM[2, ] = resultGlasso$fPM\n \nlibrary('R.matlab')\nfilename = paste(\"auc_single_EE\",\".mat\",sep = \"\")\nwriteMat(filename, aucMatrix = aucMatrix)\nfilename = paste(\"time_single_EE\",\".mat\",sep = \"\")\nwriteMat(filename, time = tMatrix)\nfilename = paste(\"tPM_single_EE\",\".mat\",sep = \"\")\nwriteMat(filename, tPM = tPM)\nfilename = paste(\"fPM_single_EE\",\".mat\",sep = \"\")\nwriteMat(filename, fPM = fPM)\n\n",
+    "created" : 1490733322514.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2557315960",
+    "id" : "1CF9F8C3",
+    "lastKnownWriteTime" : 1476370079,
+    "last_content_update" : 1476370079,
+    "path" : "~/Dropbox/SVN/nonparaGM/codes/EEGM-v1/test_single_EE.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

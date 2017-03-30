@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "n = 200\nN = 2\np = 100\nI = diag(1,p,p)\nCovs = list()\nX = list()\ngraphs = simulateGraph(p,N)\nfor(i in 1:N){\n    Covs[[i]] = solve(graphs[[i]], I)\n    X[[i]] = mvrnorm(n,mu = rep(0,p),Covs[[i]])\n}\n\nt_start = proc.time()[3]\nC1 = countSketching(t(X[[1]]), X[[1]],1000,100)\nt_end = proc.time()[3]\nt1 = t_end - t_start\n\nt_start = proc.time()[3]\nC2 = matMul(t(X[[1]]), X[[1]])\nt_end = proc.time()[3]\nt2 = t_end - t_start\n\nerr = norm((t(X[[1]]) %*% X[[1]] - C), 'I')\n",
+    "created" : 1490909968479.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2896618844",
+    "id" : "D8925F7",
+    "lastKnownWriteTime" : 1490731639,
+    "last_content_update" : 1490731639,
+    "path" : "C:/Users/mydesktop/Dropbox/SVN/nonparaGM/codes/countSketchingGM/test.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
