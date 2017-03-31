@@ -1,11 +1,12 @@
 Package: fasjem
-Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
-Encoding: UTF-8
-LazyData: true
+Version: 1.0.0
+Date: 2017-03-16
+Title: A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models
+Authors@R: c(person("Beilun", "Wang", role = c("aut", "cre"), email = "bw4mw@virginia.edu"), person("Yanjun", "Qi", role = "aut", email = "yanjun@virginia.edu"))
+Author: Beilun Wang [aut, cre], Yanjun Qi [aut]
+Maintainer: Beilun Wang <bw4mw@virginia.edu>
+Depends: R (>= 3.0.0)
+Description: This package is an R implementation of FASJEM (A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models). For more details, please see https://www.cs.virginia.edu/yanjun/paperA14/2017_JEM_combined.pdf
+License: GPL-2
+URL: https://www.cs.virginia.edu/bw4mw, https://github.com/QData/JEM
+BugReports: https://github.com/QData/JEM
