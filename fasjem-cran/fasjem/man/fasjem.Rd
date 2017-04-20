@@ -2,7 +2,7 @@
 \alias{fasjem}
 \title{A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models}
 \usage{
-fasjem(X, lambda, epsilon, gamma, rho, iterMax)
+fasjem(X, method, lambda, epsilon, gamma, rho, iterMax)
 }
 \arguments{
 \item{X}{A List of matrices. They can be both data matrices or covariance/correlation matrices. If each matrix in the X is sysmetric matrix, we assume they are covariance/correlation matrices you give.}
@@ -16,5 +16,6 @@ fasjem(X, lambda, epsilon, gamma, rho, iterMax)
 \description{
 An R implementation of fasjem method, which is introduced in "A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models"}
 \examples{
-fasjem(X, method = "fasjem-g", 0.1, 0.1, 0.1, 0.05, 10)
+data(exampleData)
+fasjem(X = exampleData, method = "fasjem-g", 0.1, 0.1, 0.1, 0.05, 10)
 }
