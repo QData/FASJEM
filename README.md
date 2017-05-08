@@ -1,5 +1,23 @@
 # JEM
 
+BibTex Citation:
+```
+@InProceedings{pmlr-v54-wang17e,
+  title =    {{A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models}},
+  author =   {Beilun Wang and Ji Gao and Yanjun Qi},
+  booktitle =    {Proceedings of the 20th International Conference on Artificial Intelligence and Statistics},
+  pages =    {1168--1177},
+  year =     {2017},
+  editor =   {Aarti Singh and Jerry Zhu},
+  volume =   {54},
+  series =   {Proceedings of Machine Learning Research},
+  address =      {Fort Lauderdale, FL, USA},
+  month =    {20--22 Apr},
+  publisher =    {PMLR},
+  pdf =      {http://proceedings.mlr.press/v54/wang17e/wang17e.pdf},
+  url =      {http://proceedings.mlr.press/v54/wang17e.html}
+}
+```
 ## Context
 This is an implementation of FASJEM: a novel approach to estimating multiple sparse Gaussian Graphic Modles (SGGMs) jointly for many related tasks under a high-dimensional situation.  FASJEM is described in the paper [A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Model](https://arxiv.org/abs/1702.02715) by Beilun Wang, Ji Gao, and Yanjun Qi and accepted by AISTAT 2017.  FASJEM has three major contributions:
 
