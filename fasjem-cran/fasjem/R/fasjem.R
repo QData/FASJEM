@@ -113,6 +113,46 @@ fasjem <- function(X, method = "fasjem-g", lambda, epsilon, gamma, rho, iterMax)
   for (i in 1:dim(tmp)[3]){
     result[[i]] = tmp[, , i]
   }
+  class(result) = "fasjem"
   return(result)
 }
+
+plot.fasjem <-
+  function(x,...)
+  {
+    .env = "environment: namespace:fasjem"
+    #UseMethod("plot")
+    K=length(x)
+    adj = .make.adj.matrix(x)
+    diag(adj)=0
+    gadj = graph.adjacency(adj,mode="upper",weighted=TRUE)
+    #weight the edges according to the classes they belong to
+    E(gadj)$color = 2^(K)-get.edge.attribute(gadj,"weight")
+    #plot the net using igraph
+    plot(gadj, vertex.frame.color="white",layout=layout.fruchterman.reingold,
+         vertex.label=NA, vertex.label.cex=3, vertex.size=1)
+  }
+
+.make.adj.matrix <-
+  function(theta, separate=FALSE)
+  {
+    K = length(theta)
+    adj = list()
+    if(separate)
+    {
+      for(k in 1:K)
+      {
+        adj[[k]] = (abs(theta[[k]])>1e-5)*1
+      }
+    }
+    if(!separate)
+    {
+      adj = 0*theta[[1]]
+      for(k in 1:K)
+      {
+        adj = adj+(abs(theta[[k]])>1e-5)*2^(k-1)
+      }
+    }
+    return(adj)
+  }
 
