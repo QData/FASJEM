@@ -2,10 +2,10 @@
 \alias{net.neighbors}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Get network neighbors of a node
+Get neighbors of a node in the network
 }
 \description{
-For each class, returns the names of the nodes connected to a given node.
+For each class, returns the name of neighbour nodes connected to a given node.
 }
 \usage{
 net.neighbors(theta, index)
@@ -13,7 +13,7 @@ net.neighbors(theta, index)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{theta}{
-A list of pXp matrices, each an estimated sparse inverse covariance matrix.  (For example, the result of FGL or GGL.)
+A list of pXp matrices, each element represents an estimated sparse inverse covariance matrix.  (For example, the result of SIMULE.)
 }
   \item{index}{
 The row number of the node to be investigated.
@@ -21,7 +21,7 @@ The row number of the node to be investigated.
 }
 
 \value{
-neighbors, a list of length K, each element of which is a vector of the row names of the nodes neighboring the node of interest.
+neighbors, a list of length K, each element is a vector including row names of the neighbour nodes.
 }
 \author{
 Beilun Wang
@@ -35,7 +35,7 @@ Beilun Wang, Ji Gao, Yanjun Qi (2017). A Fast and Scalable Joint Estimator for L
 \examples{
 ## load an example dataset with K=two tasks, p=100 features, and n=200 samples per task:
 data(exampleData)
-##run simule
+##run fasjem
 result = fasjem(X = exampleData, method = "fasjem-g", 0.1, 0.1, 0.1, 0.05, 10)
 ## get neighbors of node 50:
 net.neighbors(result,index=50)

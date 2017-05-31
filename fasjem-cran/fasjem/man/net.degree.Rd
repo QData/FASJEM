@@ -5,7 +5,7 @@
 List the degree of every node in all classes.
 }
 \description{
-For each class, lists the degree of every node.
+Lists the degree of every node for each class.
 }
 \usage{
 net.degree(theta)
@@ -13,12 +13,12 @@ net.degree(theta)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{theta}{
-A list of pXp matrices, each an estimated sparse inverse covariance matrix.  (For example, the result of simule.)
+A list of pXp matrices, each element represents an estimated sparse inverse covariance matrix.  (For example, the result of the SIMULE algorithm.)
 }
 }
 
 \value{
-degree, a list of p-length vectors, each giving the degree of all p nodes in the network for the corresponding class.}
+Degrees, in the format of a list of length p vectors represents the degree of all p nodes in the network for a class.}
 \author{
 Beilun Wang
 
@@ -31,7 +31,7 @@ Beilun Wang, Ji Gao, Yanjun Qi (2017). A Fast and Scalable Joint Estimator for L
 \examples{
 ## load an example dataset with K=two tasks, p=100 features, and n=200 samples per task:
 data(exampleData)
-##run simule
+##run fasjem
 result = fasjem(X = exampleData, method = "fasjem-g", 0.1, 0.1, 0.1, 0.05, 10)
 ## get degree list:
 net.degree(result)

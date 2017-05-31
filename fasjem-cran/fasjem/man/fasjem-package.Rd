@@ -4,7 +4,7 @@
 \title{
 A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models}
 \description{
-Runs the simule for network estimation and sparse inverse covariance estimation across multiple related datasets.
+Runs the FASJEM for network estimation and sparse inverse covariance estimation across multiple related datasets.
 }
 \details{
 \tabular{ll}{

@@ -13,15 +13,15 @@ net.hubs(theta, nhubs = 10)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{theta}{
-A list of pXp matrices, each an estimated sparse inverse covariance matrix.  (For example, the result of FGL or GGL.)
+A list of pXp matrices, each element represents an estimated sparse inverse covariance matrix.  (For example, the result of SIMULE.)
 }
   \item{nhubs}{
-The number of hubs to be identified.  net.hubs() will list the degree of the nhubs most connected nodes in each class.
+The number of hubs to be identified.
 }
 }
 
 \value{
-hubs, a list of length K, each element of which is a vector giving the degree of the most connected nodes in the corresponding class.}
+hubs, a list of length K, each element is a vector of Length n hubs giving the degree of the most connected nodes of the corresponding class.}
 \author{
 Beilun Wang
 
@@ -33,7 +33,7 @@ Beilun Wang, Ji Gao, Yanjun Qi (2017). A Fast and Scalable Joint Estimator for L
 \examples{
 ## load an example dataset with K=two tasks, p=100 features, and n=200 samples per task:
 data(exampleData)
-##run simule
+##run fasjem
 result = fasjem(X = exampleData, method = "fasjem-g", 0.1, 0.1, 0.1, 0.05, 10)
 ## get hubs list:
 net.hubs(result)
