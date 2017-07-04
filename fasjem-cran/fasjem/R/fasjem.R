@@ -93,7 +93,7 @@
   return(solve(.EEGM(covMatrix, bestniu)))
 }
 
-fasjem <- function(X, method = "fasjem-g", lambda, epsilon, gamma, rho, iterMax){
+fasjem <- function(X, method = "fasjem-g", lambda=0.1, epsilon=0.1, gamma=0.1, rho=0.05, iterMax=10){
   tmp = array(0, dim = c(dim(X[[1]])[1], dim(X[[1]])[2], length(X)))
   for (i in 1:length(X)){
     tmp[,,i] = X[[i]]
@@ -118,10 +118,40 @@ fasjem <- function(X, method = "fasjem-g", lambda, epsilon, gamma, rho, iterMax)
 }
 
 plot.fasjem <-
-  function(x,...)
+  function(x, type="graph", subID=NULL, index=NULL, ...)
   {
     .env = "environment: namespace:fasjem"
     #UseMethod("plot")
+    tmp = x
+    x = list()
+    p = dim(tmp[[1]])[1]
+    if (type == "share"){
+      x[[1]] = tmp[[1]] & tmp[[2]]
+      for (i in 2:length(tmp)){
+        x[[1]] = x[[1]] & tmp[[i]]
+      }
+      x[[1]] = matrix(as.numeric(x[[1]]), p, p)
+    }
+    if (type == "sub"){
+      temp = tmp[[1]] & tmp[[2]]
+      for (i in 2:length(tmp)){
+        temp = temp & tmp[[i]]
+      }
+      temp = !temp
+      temp = matrix(as.numeric(temp), p, p)
+      x[[1]] = tmp[[subID]] * temp
+    }
+    if (type == "graph"){
+      x = tmp
+    }
+    if (type == "neighbor"){
+      id = matrix(0,p,p)
+      id[index,] = rep(1,p)
+      id[,index] = rep(1,p)
+      for (i in 1:length(tmp)){
+        x[[i]] = tmp[[i]] * id
+      }
+    }
     K=length(x)
     adj = .make.adj.matrix(x)
     diag(adj)=0
