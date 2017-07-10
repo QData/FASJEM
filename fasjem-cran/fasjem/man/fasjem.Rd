@@ -14,7 +14,7 @@ fasjem(X, method="fasjem-g", lambda=0.1, epsilon=0.1, gamma=0.1, rho=0.05, iterM
 \item{iterMax}{An integer. The max number of iterations in the optimization of fasjem.}
 }
 \description{
-The R implementation of the FASJEM method, which is introduced in the paper "A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models". Please run demo(fasjem) to learn the basic functions provided by this package. For more details, please see <http://proceedings.mlr.press/v54/wang17e/wang17e.pdf>. }
+The R implementation of the FASJEM method, which is introduced in the paper "A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models". Please run demo(fasjemDemo) to learn the basic functions provided by this package. For more details, please see <http://proceedings.mlr.press/v54/wang17e/wang17e.pdf>. }
 \value{
 \item{Graphs}{A list of the estimated inverse covariance matrices.}
 }
@@ -51,4 +51,5 @@ Please run demo(fasjem) to learn the basic functions provided by this package. F
 \examples{
 data(exampleData)
 fasjem(X = exampleData, method = "fasjem-g", 0.1, 0.1, 0.1, 0.05, 10)
+fasjem(X = exampleData, method = "fasjem-i", 0.1, 0.1, 0.1, 0.05, 10)
 }
