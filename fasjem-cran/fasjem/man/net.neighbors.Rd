@@ -36,7 +36,7 @@ data(exampleData)
 ##run
 result = fasjem(X = exampleData, method = "fasjem-g", 0.1, 0.1, 0.1, 0.05, 10)
 ## get neighbors of node 50:
-net.neighbors(result$Graphs,index=50)
+net.neighbors(result, index=50)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

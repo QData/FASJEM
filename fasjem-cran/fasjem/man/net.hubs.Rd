@@ -34,7 +34,7 @@ data(exampleData)
 ##run
 result = fasjem(X = exampleData, method = "fasjem-g", 0.1, 0.1, 0.1, 0.05, 10)
 ## get hubs list:
-net.hubs(result$Graphs)
+net.hubs(result)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

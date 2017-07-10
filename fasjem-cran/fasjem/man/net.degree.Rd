@@ -33,7 +33,7 @@ data(exampleData)
 ##run
 result = fasjem(X = exampleData, method = "fasjem-g", 0.1, 0.1, 0.1, 0.05, 10)
 ## get degree list:
-net.degree(result$Graphs)
+net.degree(result)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

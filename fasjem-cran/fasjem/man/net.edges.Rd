@@ -33,7 +33,7 @@ data(exampleData)
 ##run
 result = fasjem(X = exampleData, method = "fasjem-g", 0.1, 0.1, 0.1, 0.05, 10)
 ## get edges list:
-net.edges(result$Graphs)
+net.edges(result)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

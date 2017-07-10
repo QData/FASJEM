@@ -30,5 +30,6 @@ Beilun Wang, Ji Gao, Yanjun Qi (2017). A Fast and Scalable Joint Estimator for L
 \dontrun{
 data(exampleData)
 fasjem(X = exampleData, method = "fasjem-g", 0.1, 0.1, 0.1, 0.05, 10)
+demo(fasjem)
 }
 }
