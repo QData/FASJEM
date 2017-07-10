@@ -3,7 +3,6 @@
 \title{A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models}
 \usage{
 fasjem(X, method="fasjem-g", lambda=0.1, epsilon=0.1, gamma=0.1, rho=0.05, iterMax=10)
-fasjem(X, method="fasjem-i", lambda=0.1, epsilon=0.1, gamma=0.1, rho=0.05, iterMax=10)
 }
 \arguments{
 \item{X}{A List of input matrices. They can be either data matrices or covariance matrices. If every matrix in the X is a symmetric matrix, the input matrices are assumed to be the covariance matrices from the multiple related tasks. }
@@ -17,7 +16,7 @@ fasjem(X, method="fasjem-i", lambda=0.1, epsilon=0.1, gamma=0.1, rho=0.05, iterM
 \description{
 The R implementation of the FASJEM method, which is introduced in the paper "A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models". Please run demo(fasjem) to learn the basic functions provided by this package. For more details, please see <http://proceedings.mlr.press/v54/wang17e/wang17e.pdf>. }
 \value{
-A list of the estimated inverse covariance matrices.
+\item{Graphs}{A list of the estimated inverse covariance matrices.}
 }
 \references{
 Beilun Wang, Ji Gao, Yanjun Qi (2017). A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models. <http://proceedings.mlr.press/v54/wang17e/wang17e.pdf>
