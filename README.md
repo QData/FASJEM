@@ -1,4 +1,4 @@
-# JEM
+## References
 
 BibTex Citation:
 ```
@@ -19,18 +19,36 @@ BibTex Citation:
 }
 ```
 ## Context
-This is an implementation of FASJEM: a novel approach to estimating multiple sparse Gaussian Graphic Modles (SGGMs) jointly for many related tasks under a high-dimensional situation.  FASJEM is described in the paper [A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Model](https://arxiv.org/abs/1702.02715) by Beilun Wang, Ji Gao, and Yanjun Qi and accepted by AISTAT 2017.  FASJEM has three major contributions:
+This repo provides two implementations of the FASJEM algorithm: a novel fast and Scalable approach to estimating multiple sparse Gaussian Graphic Modles (SGGMs) jointly for many related tasks under a high-dimensional situation.  
+
+FASJEM is described in the paper [A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Model](https://arxiv.org/abs/1702.02715) by Beilun Wang, Ji Gao, and Yanjun Qi and accepted by AISTAT 2017.  FASJEM has three major contributions:
 
 - We solve FASJEM through an entry-wise manner which is parallelizable.
 - We choose a proximal algorithm to optimize FASJEM. This improves the computational efficiency from O(Kp3) to O(Kp2) and reduces the memory requirement from O(Kp2) to O(K).
 - We theoretically prove that FASJEM achieves a consistent estimation with a convergence rate of O(log(Kp)/ntot). On several synthetic and four real-world datasets, FASJEM shows significant improvements over baselines on accuracy, computational complexity and memory costs.
 
-# Paper-FasJem
-This is the implementation of FASJEM method based on the [torch7](http://torch.ch/).
+## implementations
+This repo provides two different implementations of the FASJEM algorithm:
 
-To use this code, you need to install the [torch7](http://torch.ch/).
+1. the implementation of FASJEM method based on the [torch7](http://torch.ch/).
+To use this GPU version of the FASJEM code, you need to install the [torch7](http://torch.ch/) and
+ include the [cutorch](https://github.com/torch/cutorch) package.
 
-To use the GPU version of the FASJEM, you need to include the [cutorch](https://github.com/torch/cutorch) package.
+2. the R implementation of FASJEM as the R package "fasjem" in CRAN
+- install the R "simule" package through R console:
+```r
+install.packages('fasjem')
+```
+- then load the library simule in R console, by running:
+```r
+library(fasjem)
+```
+- then run demo to learn basic functions provided by the fasjem R package, by running:
+```r
+demo(fasjem)
+```
+
+
 
 ## Contacts
 - bugs, maintenance, feedback, questions: Beilun Wang bw4mw [at] virginia [dot] edu

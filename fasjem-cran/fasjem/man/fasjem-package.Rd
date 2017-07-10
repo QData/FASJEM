@@ -4,8 +4,8 @@
 \title{
 A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models}
 \description{
-This is an R implementation of "A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models" (FASJEM). The FASJEM algorithm can be used to estimate multiple related precision matrices. For instance, it can identify context-specific gene networks from multi-context gene expression datasets. By performing data-driven network inference from high-dimensional and heterogonous data sets, this tool  can help users effectively translate aggregated data into knowledge that take the form of graphs among entities. For more details, please see <http://proceedings.mlr.press/v54/wang17e/wang17e.pdf>.
-This package includes two options of the second regularization function: (1) the group,2 norm and (2) the group,infinity norm. Both of them assume that multiple graphs have similar sparisity pattern.
+This is an R implementation of "A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models" (FASJEM). The FASJEM algorithm can be used to estimate multiple related precision matrices. For instance, it can identify context-specific gene networks from multi-context gene expression datasets. By performing data-driven network inference from high-dimensional and heterogenous data sets, this tool  can help users effectively translate aggregated data into knowledge that take the form of graphs among entities. For more details, please read <http://proceedings.mlr.press/v54/wang17e/wang17e.pdf>.
+Assuming the multiple related graphs share a certain sparsity pattern, this package provides two different options for regularizing such sparsity patterns: (1) the group,2 norm (\code{method = "fasjem-g"}) and (2) the group,infinity norm (\code{method = "fasjem-i"}).
 }
 \details{
 \tabular{ll}{

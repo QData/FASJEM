@@ -2,10 +2,10 @@
 \alias{net.edges}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-List the edges in a network
+List the edges of each graph in the input list of multiple graphs
 }
 \description{
-For each class, list every estimated edge in the form of pair of connected nodes.
+List every estimated edge in the form of pair of connected nodes for each graph in the input list of multiple graphs.
 }
 \usage{
 net.edges(theta)
@@ -13,29 +13,28 @@ net.edges(theta)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{theta}{
-A list of pXp matrices. Each matrix in the list represents an estimated sparse inverse covariance matrix.
+An input list of multiple graphs. Each graph is represented as a pXp matrix. (For example, the result of the fasjem algorithm: a list of pXp matrices in which each matrix represents an estimated sparse inverse covariance matrix.)
 }
 }
 
 \value{
-edges, a length K list, each element of the list represents an igraph.es object which is the detail of all pairs of connected nodes in the class.
+edges, a length K list, each element of the list represents an igraph.es object which is the detail of all pairs of connected nodes of each graph in the input list of multiple graphs.
 }
-\author{
-Beilun Wang
-
-Maintainer: Beilun Wang - bw4mw at virginia dot edu
-}
-
 \references{
 Beilun Wang, Ji Gao, Yanjun Qi (2017). A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models. <http://proceedings.mlr.press/v54/wang17e/wang17e.pdf>
 }
+\author{
+Beilun Wang}
+
 \examples{
-## load an example dataset with K=2 tasks, p=100 features, and n=200 samples per task:
+\dontrun{
+## load an example multi-task dataset with K=2 tasks, p=100 features, and n=200 samples per task:
 data(exampleData)
-##run fasjem
+##run
 result = fasjem(X = exampleData, method = "fasjem-g", 0.1, 0.1, 0.1, 0.05, 10)
 ## get edges list:
-net.edges(result)
+net.edges(result$Graphs)
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
