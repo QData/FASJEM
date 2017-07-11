@@ -45,7 +45,7 @@ When \code{method = "fasjem-g"}, \eqn{\mathcal{R}'(\cdot) = ||\cdot||_{\mathcal{
 
 When \code{method = "fasjem-i"}, \eqn{\mathcal{R}'(\cdot) = ||\cdot||_{\mathcal{G},\infty}}.
 
-Please run demo(fasjem) to learn the basic functions provided by this package. For more details, please see <http://proceedings.mlr.press/v54/wang17e/wang17e.pdf>.
+Please run \code{demo(fasjemDemo)} to learn the basic functions provided by this package. For more details, please see <http://proceedings.mlr.press/v54/wang17e/wang17e.pdf>.
 }
 \keyword{fasjem}
 \examples{
