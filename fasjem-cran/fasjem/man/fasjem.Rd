@@ -6,9 +6,13 @@ fasjem(X, method="fasjem-g", lambda=0.1, epsilon=0.1, gamma=0.1, rho=0.05, iterM
 }
 \arguments{
 \item{X}{A List of input matrices. They can be either data matrices or covariance matrices. If every matrix in the X is a symmetric matrix, the input matrices are assumed to be the covariance matrices from the multiple related tasks. }
-\item{method}{By using two different regularization functions as the second norm in the objective, this package provides two different options for regularizing the sparsity pattern shared among multiple graphs. This parameter decides which function to use for the second regularization norm. When \code{method = "fasjem-g"}, fasjem will use the group,2 norm as the second regularization function. When \code{method = "fasjem-i"}, fasjem will choose the group,infinity norm as the second regularization function. The default value is "fasjem-g". Please check the paper for more details.  }
-\item{lambda}{A positive number.  This hyperparameter controls the sparsity level of the matrices.}
-\item{epsilon}{A positive number. This hyperparameter represents the ratio between the l1 norm and the second group norm.}
+\item{method}{By using two different regularization functions as the second norm in the objective, this package provides two different options for regularizing the sparsity pattern shared among multiple graphs. This parameter decides which function to use for the second regularization norm.
+
+When \code{method = "fasjem-g"}, fasjem will use the group,2 norm as the second regularization function.
+
+When \code{method = "fasjem-i"}, fasjem will choose the group,infinity norm as the second regularization function. The default value is "fasjem-g". Please check the paper for more details.  }
+\item{lambda}{A positive number.  This hyperparameter controls the sparsity level of the matrices. The \eqn{\lambda_n} in the following section: Details.}
+\item{epsilon}{A positive number. This hyperparameter represents the ratio between the l1 norm and the second group norm. The \eqn{\epsilon} in the following section: Details.}
 \item{gamma}{A positive number. This hyperparameter is used in calculating each proximity during optimization. Please check the Algorithm 1 in our paper for more details.}
 \item{rho}{A positive number. This hyperparameter controls the learning rate of the proximal gradient method. Please check the Algorithm 1 in our paper for more details.}
 \item{iterMax}{An integer. The max number of iterations in the optimization of fasjem.}
