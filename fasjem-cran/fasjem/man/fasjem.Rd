@@ -18,7 +18,7 @@ When \code{method = "fasjem-i"}, fasjem will choose the group,infinity norm as t
 \item{iterMax}{An integer. The max number of iterations in the optimization of fasjem.}
 }
 \description{
-The R implementation of the FASJEM method, which is introduced in the paper "A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models". Please run demo(fasjemDemo) to learn the basic functions provided by this package. For more details, please see <http://proceedings.mlr.press/v54/wang17e/wang17e.pdf>. }
+The R implementation of the FASJEM method, which is introduced in the paper "A Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models". Please run demo(fasjem) to learn the basic functions provided by this package. For more details, please see <http://proceedings.mlr.press/v54/wang17e/wang17e.pdf>. }
 \value{
 \item{Graphs}{A list of the estimated inverse covariance matrices.}
 }
@@ -49,7 +49,7 @@ When \code{method = "fasjem-g"}, \eqn{\mathcal{R}'(\cdot) = ||\cdot||_{\mathcal{
 
 When \code{method = "fasjem-i"}, \eqn{\mathcal{R}'(\cdot) = ||\cdot||_{\mathcal{G},\infty}}.
 
-Please run \code{demo(fasjemDemo)} to learn the basic functions provided by this package. For more details, please see <http://proceedings.mlr.press/v54/wang17e/wang17e.pdf>.
+Please run \code{demo(fasjem)} to learn the basic functions provided by this package. For more details, please see <http://proceedings.mlr.press/v54/wang17e/wang17e.pdf>.
 }
 \keyword{fasjem}
 \examples{

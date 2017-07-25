@@ -6,7 +6,7 @@
 }
 \description{
   Plotting function for fasjem objects.
-  This function plots either the shared graph, the task-specific networks, the networks or the neighborhood networks for a certain node. Please run demo(fasjemDemo) to learn the basic functions provided by this package.  For further details, please read the original paper:  <http://proceedings.mlr.press/v54/wang17e/wang17e.pdf>. }
+  This function plots either the shared graph, the task-specific networks, the networks or the neighborhood networks for a certain node. Please run demo(fasjem) to learn the basic functions provided by this package.  For further details, please read the original paper:  <http://proceedings.mlr.press/v54/wang17e/wang17e.pdf>. }
 \usage{
   \method{plot}{fasjem}(x, type="graph", subID=NULL, index=NULL, ...)
 }
