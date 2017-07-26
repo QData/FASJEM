@@ -94,6 +94,13 @@
 }
 
 fasjem <- function(X, method = "fasjem-g", lambda=0.1, epsilon=0.1, gamma=0.1, rho=0.05, iterMax=10){
+
+  if (is.data.frame(X[[1]])){
+    for (i in 1:(length(X))){
+      X[[i]] = as.matrix(X[[i]])
+    }
+  }
+
   tmp = array(0, dim = c(dim(X[[1]])[1], dim(X[[1]])[2], length(X)))
   for (i in 1:length(X)){
     tmp[,,i] = X[[i]]
