@@ -18,6 +18,10 @@ BibTex Citation:
   url =      {http://proceedings.mlr.press/v54/wang17e.html}
 }
 ```
+
+## CRAN R Library page: [URL](https://cran.r-project.org/web/packages/fasjem/)
+
+
 ## Context
 This repo provides two implementations of the FASJEM algorithm: a novel fast and Scalable approach to estimating multiple sparse Gaussian Graphic Modles (SGGMs) jointly for many related tasks under a high-dimensional situation.  
 
