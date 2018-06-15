@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1529006002904.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5BF1FF96",
+    "lastKnownWriteTime" : 1529090425,
+    "last_content_update" : 1529090425408,
+    "path" : "E:/Github/Papers-sGGM/Zhaoyang/fasjem/demo/synthetic.R",
+    "project_path" : "demo/synthetic.R",
+    "properties" : {
+        "cursorPosition" : "10,0",
+        "scrollLine" : "7",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

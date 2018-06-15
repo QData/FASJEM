@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1529003629068.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F23B0898",
+    "lastKnownWriteTime" : 1529008250,
+    "last_content_update" : 1529008250814,
+    "path" : "E:/Github/Papers-sGGM/Zhaoyang/fasjem/demo/cancer.R",
+    "project_path" : "demo/cancer.R",
+    "properties" : {
+        "cursorPosition" : "3,14",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
