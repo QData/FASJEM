@@ -25,13 +25,13 @@ readline(prompt="Press [enter] to display four plots showing all graphs, shared 
 par(mfrow=c(2,2))
 
 {
-  plot.fasjem(result, option = "2D", graphlabel = label, type="task", graphlayout = layout)
+  plot.fasjem(result, graphlabel = label, type="task", graphlayout = layout)
 
-  plot.fasjem(result, option = "2D", graphlabel = label, type="share", graphlayout = layout)
+  plot.fasjem(result, graphlabel = label, type="share", graphlayout = layout)
 
-  plot.fasjem(result, option = "2D", graphlabel = label, type="taskspecific", subID=1, graphlayout = layout)
+  plot.fasjem(result, graphlabel = label, type="taskspecific", subID=1, graphlayout = layout)
 
-  plot.fasjem(result, option = "2D", graphlabel = label, type="taskspecific", subID=2, graphlayout = layout)
+  plot.fasjem(result, graphlabel = label, type="taskspecific", subID=2, graphlayout = layout)
 }
 
 

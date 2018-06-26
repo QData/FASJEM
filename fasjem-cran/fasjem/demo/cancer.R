@@ -34,13 +34,13 @@ readline(prompt="Press [enter] to display four plots showing all graphs, shared 
 par(mfrow=c(2,2))
 
 {
-  plot.fasjem(result, option = "2D", graphlabel = label, type="task", graphlayout = layout)
+  plot.fasjem(result,  graphlabel = label, type="task", graphlayout = layout)
 
-  plot.fasjem(result, option = "2D", graphlabel = label, type="share", graphlayout = layout)
+  plot.fasjem(result,  graphlabel = label, type="share", graphlayout = layout)
 
-  plot.fasjem(result, option = "2D", graphlabel = label, type="taskspecific", subID=1, graphlayout = layout)
+  plot.fasjem(result,  graphlabel = label, type="taskspecific", subID=1, graphlayout = layout)
 
-  plot.fasjem(result, option = "2D", graphlabel = label, type="taskspecific", subID=2, graphlayout = layout)
+  plot.fasjem(result, graphlabel = label, type="taskspecific", subID=2, graphlayout = layout)
 }
 
 
@@ -49,15 +49,15 @@ readline(prompt="Press [enter] to display four plots zooming into node MELK and 
 
 nodeid = which(label %in% c("MELK","E2F3")) ### look for id
 {
-  plot.fasjem(result, option = "2D", graphlabel = label, type="neighbour", index = nodeid, graphlayout = layout)
+  plot.fasjem(result,  graphlabel = label, type="neighbour", index = nodeid, graphlayout = layout)
 
-  plot.fasjem(result, option = "2D", graphlabel = label, type="neighbour", subID = 0, index = nodeid,graphlayout = layout)
+  plot.fasjem(result,  graphlabel = label, type="neighbour", subID = 0, index = nodeid,graphlayout = layout)
 
-  plot.fasjem(result, option = "2D", graphlabel = label, type="neighbour", neighbouroption = "taskspecific",
+  plot.fasjem(result,  graphlabel = label, type="neighbour", neighbouroption = "taskspecific",
               subID=1, index = nodeid,
               graphlayout = layout)
 
-  plot.fasjem(result, option = "2D", graphlabel = label, type="neighbour", neighbouroption = "taskspecific",
+  plot.fasjem(result,  graphlabel = label, type="neighbour", neighbouroption = "taskspecific",
               subID=2, index = nodeid,
               graphlayout = layout)
 }

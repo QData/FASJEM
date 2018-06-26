@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "1031849723",
     "id" : "26B0C2CE",
-    "lastKnownWriteTime" : 1529008770,
-    "last_content_update" : 1529008770163,
-    "path" : "E:/Github/Papers-sGGM/Zhaoyang/fasjem/demo/fasjem.R",
+    "lastKnownWriteTime" : 1530045199,
+    "last_content_update" : 1530045199139,
+    "path" : "E:/Github/FASJEM/fasjem-cran/fasjem/demo/fasjem.R",
     "project_path" : "demo/fasjem.R",
     "properties" : {
-        "cursorPosition" : "88,12",
-        "scrollLine" : "86"
+        "cursorPosition" : "33,21",
+        "scrollLine" : "0"
     },
     "relative_order" : 5,
     "source_on_save" : false,

@@ -25,13 +25,13 @@ readline(prompt="Press [enter] to view the four plots showing all graphs, shared
 par(mfrow=c(2,2))
 
 {
-  plot.fasjem(result, option = "2D", graphlabel = label, type="task", graphlayout = layout)
+  plot.fasjem(result, graphlabel = label, type="task", graphlayout = layout)
 
-  plot.fasjem(result, option = "2D", graphlabel = label, type="share", graphlayout = layout)
+  plot.fasjem(result, graphlabel = label, type="share", graphlayout = layout)
 
-  plot.fasjem(result, option = "2D", graphlabel = label, type="taskspecific", subID=1, graphlayout = layout)
+  plot.fasjem(result, graphlabel = label, type="taskspecific", subID=1, graphlayout = layout)
 
-  plot.fasjem(result, option = "2D", graphlabel = label, type="taskspecific", subID=2, graphlayout = layout)
+  plot.fasjem(result, graphlabel = label, type="taskspecific", subID=2, graphlayout = layout)
 }
 
 ### comparsion display
@@ -41,26 +41,26 @@ par(mfrow=c(2,3))
 data(exampleDataGraph)
 
 {
-  plot.fasjem(result, option = "2D", graphlabel = label, type="share", graphlayout = layout)
+  plot.fasjem(result, graphlabel = label, type="share", graphlayout = layout)
 
-  plot.fasjem(result, option = "2D", graphlabel = label, type="taskspecific", subID=1, graphlayout = layout)
+  plot.fasjem(result, graphlabel = label, type="taskspecific", subID=1, graphlayout = layout)
 
-  plot.fasjem(result, option = "2D", graphlabel = label, type="taskspecific", subID=2, graphlayout = layout)
+  plot.fasjem(result, graphlabel = label, type="taskspecific", subID=2, graphlayout = layout)
 
   plot.igraph(exampleDataGraph[[1]],layout = layout, vertex.label.font=2,
               vertex.shape="none",
               vertex.label.color="gray40",
-              vertex.label.cex=.7, vertex.frame.color="white", edge.color = categorical_pal(3)[3],vertex.size = 10 ,main = "shared groundtruth")
+              vertex.label.cex=.7, vertex.frame.color="white", edge.color = rainbow(3)[3],vertex.size = 10 ,main = "shared groundtruth")
 
   plot.igraph(exampleDataGraph[[2]],layout = layout,vertex.label.font=2,
               vertex.shape="none",
               vertex.label.color="gray40",
-              vertex.label.cex=.7, vertex.frame.color="white", edge.color = categorical_pal(3)[1], vertex.size = 10 , main = "task 1 specific groundtruth")
+              vertex.label.cex=.7, vertex.frame.color="white", edge.color = rainbow(3)[1], vertex.size = 10 , main = "task 1 specific groundtruth")
 
   plot.igraph(exampleDataGraph[[3]],layout = layout,vertex.label.font=2,
               vertex.shape="none",
               vertex.label.color="gray40",
-              vertex.label.cex=.7, vertex.frame.color="white", edge.color = categorical_pal(3)[2], vertex.size = 10 , main = "task 2 specific groundtruth")
+              vertex.label.cex=.7, vertex.frame.color="white", edge.color = rainbow(3)[2], vertex.size = 10 , main = "task 2 specific groundtruth")
 }
 
 readline(prompt="Press [enter] to view plots zooming into node 6 and 8 in different graphs")
@@ -69,15 +69,15 @@ nodeid = c(6,8) ### node id
 par(mfrow=c(2,2))
 
 {
-  plot.fasjem(result, option = "2D", graphlabel = label, type="neighbour", index = nodeid, graphlayout = layout)
+  plot.fasjem(result,  graphlabel = label, type="neighbour", index = nodeid, graphlayout = layout)
 
-  plot.fasjem(result, option = "2D", graphlabel = label, type="neighbour", subID = 0, index = nodeid, graphlayout = layout)
+  plot.fasjem(result,  graphlabel = label, type="neighbour", subID = 0, index = nodeid, graphlayout = layout)
 
-  plot.fasjem(result, option = "2D", graphlabel = label, type="neighbour", neighbouroption = "taskspecific",
+  plot.fasjem(result, graphlabel = label, type="neighbour", neighbouroption = "taskspecific",
               subID=1, index = nodeid,
               graphlayout = layout)
 
-  plot.fasjem(result, option = "2D", graphlabel = label, type="neighbour", neighbouroption = "taskspecific",
+  plot.fasjem(result, graphlabel = label, type="neighbour", neighbouroption = "taskspecific",
               subID=2, index = nodeid,
               graphlayout = layout)
 }
