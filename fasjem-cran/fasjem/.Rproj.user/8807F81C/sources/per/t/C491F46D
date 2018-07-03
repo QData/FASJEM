@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1530648258201.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "3|24|10|0|\n14|39|20|0|\n25|60|27|0|\n",
+    "hash" : "2559455507",
+    "id" : "C491F46D",
+    "lastKnownWriteTime" : 1530649794,
+    "last_content_update" : 1530649794941,
+    "path" : "C:/Users/Karen Chen/Desktop/Util.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "44,25",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 3,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}

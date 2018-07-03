@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1530650310308.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2267598062",
+    "id" : "EDE37EBF",
+    "lastKnownWriteTime" : 1530650358,
+    "last_content_update" : 1530650358474,
+    "path" : "E:/Github/FASJEM/fasjem-cran/fasjem/R/Data.R",
+    "project_path" : "R/Data.R",
+    "properties" : {
+        "cursorPosition" : "26,2",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
