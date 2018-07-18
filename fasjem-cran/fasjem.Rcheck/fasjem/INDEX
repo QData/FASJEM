@@ -1,0 +1,15 @@
+cancer                  Microarray data set for breast cancer
+exampleData             A simulated toy dataset that includes 2 data
+                        matrices (from 2 related tasks).
+exampleDataGraph        A simulated toy dataset that includes 3 igraph
+                        objects
+fasjem                  A Fast and Scalable Joint Estimator for
+                        Learning Multiple Related Sparse Gaussian
+                        Graphical Models
+fasjem-package          A Fast and Scalable Joint Estimator for
+                        Learning Multiple Related Sparse Gaussian
+                        Graphical Models
+nip_37_data             NIPS word count dataset
+plot.fasjem             Plot fasjem result specified by user input
+returngraph             return igraph object from fasjem result
+                        specified by user input

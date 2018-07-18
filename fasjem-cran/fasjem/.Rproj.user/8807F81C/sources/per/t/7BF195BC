@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1530646824289.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "40|26|114|2|\n180|3|225|2|\n232|3|251|2|\n259|3|349|2|\n354|3|359|2|\n",
+    "hash" : "1937410895",
+    "id" : "7BF195BC",
+    "lastKnownWriteTime" : 1530650136,
+    "last_content_update" : 1530650136099,
+    "path" : "E:/Github/FASJEM/fasjem-cran/fasjem/R/Plot.R",
+    "project_path" : "R/Plot.R",
+    "properties" : {
+        "cursorPosition" : "164,20",
+        "scrollLine" : "131",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
